@@ -64,7 +64,7 @@ export function WordToGuess({ guessedLetter, youWon, setYouWon, gameOver, setGam
 
     //if the word does not contain the latest guessed letter, this fn subtracts '1' from the # of attempts left
     console.log(displayWordToGuess);
-    if (flag == false && attemptsLeft > 1) {
+    if (flag == false && attemptsLeft >= 1) {
       setAttemptsLeft(attemptsLeft - 1);
       if (attemptsLeft == 1) {
         setGameOver(true);

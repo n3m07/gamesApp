@@ -16,7 +16,7 @@ function HangMan({currentUser}) {
   let [youWon, setYouWon] = useState(false);
   let [attemptsLeft, setAttemptsLeft] = useState(7);
   let [picToDisplay, setPicToDisplay] = useState(`HG${attemptsLeft}`)
-  console.log(picToDisplay)
+/*   console.log(picToDisplay) */
 
    // Use useEffect to update picToDisplay when attemptsLeft changes
    useEffect(() => {
@@ -32,7 +32,8 @@ function HangMan({currentUser}) {
       <div className="flex w-full h-[85vh] gap-8">
         <div className="w-1/2 h-[85vh] flex justify-center items-center">
           {/* Use dynamic import based on picToDisplay */}
-        {picToDisplay === "HG1" && youWon==false && <img src={HG1} alt="Hangman" className="w-full h-5/6 flex justify-start items-center" />}
+          {picToDisplay === "HG0" && youWon==false && <img src={HG1} alt="Hangman" className="w-full h-5/6 flex justify-start items-center" />}
+          {picToDisplay === "HG1" && youWon == false && <img src={HG1} alt="Hangman" className="w-full h-5/6 flex justify-start items-center" />}
         {picToDisplay === "HG2" && youWon==false && <img src={HG2} alt="Hangman" className="w-full h-5/6 flex justify-start items-center" />}
         {picToDisplay === "HG3" && youWon==false && <img src={HG3} alt="Hangman" className="w-full h-5/6 flex justify-start items-center" />}
         {picToDisplay === "HG4" && youWon==false && <img src={HG4} alt="Hangman" className="w-full h-5/6 flex justify-start items-center" />}
