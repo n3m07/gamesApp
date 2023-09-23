@@ -27,7 +27,7 @@ function HangMan({currentUser}) {
   return (
     <div className="w-full h-[90vh] bg-pink-400 justify-start items-center p-[1rem] flex flex-col ">
       <h1 className="w-[85%] h-[5vh] flex justify-center items-start bg-purple-400 rounded-md border border-purple-700 text-black">
-        HangMan
+        HangMan: {attemptsLeft}
       </h1>
       <div className="flex w-full h-[85vh] gap-8">
         <div className="w-1/2 h-[85vh] flex justify-center items-center">
