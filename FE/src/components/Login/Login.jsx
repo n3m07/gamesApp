@@ -1,6 +1,4 @@
 import { useState, useEffect } from "react";
-import axios from "axios";
-import { subscribeBtnHandler } from "./subscribeBtnHandler";
 import SubscribeForm from "./SubscribeForm";
 import { LoginForm } from "./LoginForm";
 
@@ -9,7 +7,6 @@ function Login({cookies, setCookie, isLoggedIn, setIsLoggedIn, currentUser, setC
   let [submitFormat, setSubmitFormat] = useState("login");
   let [nickName, setNickName] = useState("");
   let [pw, setPw] = useState("");
-  /* let [isLoggedIn, setIsLoggedIn]= useState(false) */
 
   useEffect(() => {
     console.log(submitFormat);

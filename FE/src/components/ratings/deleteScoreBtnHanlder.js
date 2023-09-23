@@ -11,7 +11,6 @@ export default async function deleteScoreBtnHanlder({ currentUser, el, i }) {
   console.log(data);
 
   try {
-    // Perform a POST request to create a new item using Axios
     const response = await axios.delete(deleteUrl, data);
 
     console.log("deleted element", response.data);

@@ -1,8 +1,7 @@
 const express = require("express");
 const router = express.Router();
 const usersController = require("../controllers/usersControllers");
-/* const {getAllScores, getScoreById, postNewScore, modifyScoreById, deleteScoreById}= require('../controllers/scoreControllers')
- */
+
 const loginController = require("../controllers/loginController");
 const randomWordsController = require("../controllers/randomWordsController");
 const newScoreController = require("../controllers/newScoreController");

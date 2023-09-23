@@ -1,11 +1,12 @@
 import React from "react";
 import { useNavigate } from "react-router-dom";
-import { useEffect } from "react";
-import dateFormat from 'dateformat';
+import { useEffect, useState } from "react";
+import dateFormat from "dateformat";
 import deleteScoreBtnHanlder from "./deleteScoreBtnHanlder";
 
 function Ratings({ currentUser, setCurrentUser, isLoggedIn }) {
   const navigate = useNavigate();
+  const [avg, setAvg]=useState('')
 
   useEffect(() => {
     // Controlla se l'utente non è loggato e quindi naviga alla pagina di login
@@ -14,6 +15,20 @@ function Ratings({ currentUser, setCurrentUser, isLoggedIn }) {
     }
   }, [isLoggedIn, navigate]);
 
+  useEffect(() => {
+    if (isLoggedIn == true) {
+      let sum = 0;
+      console.log(currentUser)
+      currentUser.scoresHG.forEach((el) => {
+        sum += el.score;
+      });
+      console.log(sum)
+      let avg = sum / currentUser.scoresHG.length;
+      console.log(avg)
+      setAvg(avg)
+    }
+  },[isLoggedIn])
+
   if (isLoggedIn == true) {
     return (
       <div className="w-full h-[90vh] bg-pink-400 flex flex-col flex-grow items-center justify-center gap-2">
@@ -21,17 +36,23 @@ function Ratings({ currentUser, setCurrentUser, isLoggedIn }) {
           Hangman Ratings
         </div>
         <div className="w-1/3 h-4/6 overflow-y-auto flex flex-col items-center justify-start bg-purple-400 border border-black rounded-lg gap-2 p-2">
-          <div>Average Score: {currentUser.avgScoresHG}</div>
+          <div>Average Score: {avg}</div>
           <div className="gap-2 flex flex-col">
             Top Scores:
             {currentUser.scoresHG.map((el, i) => {
               return (
                 <section className="flex items-start justify-center" key={i}>
                   <div className="bg-white border border-black rounded-md flex flex-col italic p-2 overflow-auto">
-                    <div>{dateFormat(el.time, 'dddd, mmmm dS, yyyy, h:MM:ss TT')}</div>
+                    <div>
+                      {dateFormat(el.time, "dddd, mmmm dS, yyyy, h:MM:ss TT")}
+                    </div>
                     <div>Score: {el.score}</div>
                   </div>
-                  <button onClick={()=>{deleteScoreBtnHanlder({currentUser, el, i})}}>
+                  <button
+                    onClick={() => {
+                      deleteScoreBtnHanlder({ currentUser, el, i });
+                    }}
+                  >
                     <svg
                       xmlns="http://www.w3.org/2000/svg"
                       fill="none"

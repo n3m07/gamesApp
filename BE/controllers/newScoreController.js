@@ -13,7 +13,7 @@ exports.newScore = async (req, res) => {
       }
   
       // Update the user's score and time
-      user.scoresHG.push({ time, score }); // Assuming you have a "scores" array in your User model
+      user.scoresHG.push({ time, score });
   
       // Save the updated user data
       await user.save();

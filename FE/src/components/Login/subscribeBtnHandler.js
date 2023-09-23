@@ -13,7 +13,6 @@ export async function subscribeBtnHandler({nickName, pw}) {
   }
 
   try {
-    // Perform a POST request to create a new item using Axios
     const response = await axios.post(postUrl, userData, {
       withCredentials: true,
     });

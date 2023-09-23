@@ -4,7 +4,7 @@ import axios from "axios";
 
 //THIS COMPONENT HANDLES ALL FUNCTIONS RELATED WITH FETCHING A JSON OF WORDS TO GUESS FROM THE DB, RANDOMLY CHOOSING ONE AND DISPLAYING IT CORRECTLY
 
-export function WordToGuess({ guessWord, guessedLetter, youWon, setYouWon, gameOver, setGameOver }) {
+export function WordToGuess({ guessedLetter, youWon, setYouWon, gameOver, setGameOver, attemptsLeft, setAttemptsLeft }) {
   //array that corresponds to the letters forming the word to be guessed
   /* const wordToGuess = hangManWordsArr[0].split(""); */
   let [wordToGuess, setWordToGuess] = useState("");
@@ -33,8 +33,6 @@ export function WordToGuess({ guessWord, guessedLetter, youWon, setYouWon, gameO
   const [displayWordToGuess, setDisplayWordToGuess] = useState(
     Array(wordToGuess.length).fill("?")
   );
-
-  const [attemptsLeft, setAttemptsLeft] = useState(5);
 
   //every time the state variable wordToGuess updates (which happens only on the first rendering), this hook takes the variable 'word to guess and splits it into an array substituting each letter with question marks'
   useEffect(() => {
@@ -105,9 +103,9 @@ export function WordToGuess({ guessWord, guessedLetter, youWon, setYouWon, gameO
         </div>
       )}
       {gameOver == true && (
-        <div>congrtulation: lost the game hecking looser.</div>
+        <div className="text-2xl italic font-bold text-red-600">You are such a disappointment...</div>
       )}
-      {youWon == true && (<div>you won: press on the send score btn and submit your score</div>)}
+      {youWon == true && (<div className="text-2xl italic text-black"><span className="font-bold text-yellow-700">Congratulations:</span> press on the '<span className="text-green-700">send score</span>' btn to submit your score</div>)}
     </>
   );
 }

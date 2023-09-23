@@ -21,7 +21,6 @@ export async function loginBtnHandler({
   }
 
   try {
-    // Perform a POST request to create a new item using Axios
     const response = await axios.post(postUrl, userData, {
       withCredentials: true,
     });

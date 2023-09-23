@@ -45,7 +45,7 @@ function App() {
           <Route path="/" element={<Home isLoggedIn={isLoggedIn}/>} />
           <Route path="/MoreInfo" element={<MoreInfo />} />
           <Route path="/Contacts" element={<Contacts />} />
-          <Route path="/HangMan" element={<HangMan />} />
+          <Route path="/HangMan" element={<HangMan currentUser={currentUser} />} />
           <Route path="*" element={<NotFound />}></Route>
           <Route
             path="/Ratings"
