@@ -83,7 +83,7 @@ export function WordToGuess({ guessedLetter, youWon, setYouWon, gameOver, setGam
       console.log('youWon');
       console.log(Array(displayWordToGuess).includes('?'))
     }
-  },[displayWordToGuess, wordToGuess, youWon, attemptsLeft])
+  },[displayWordToGuess])
 
   return (
     <>

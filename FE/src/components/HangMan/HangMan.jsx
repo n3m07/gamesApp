@@ -38,6 +38,7 @@ function HangMan({currentUser}) {
         {picToDisplay === "HG4" && youWon==false && <img src={HG4} alt="Hangman" className="w-full h-5/6 flex justify-start items-center" />}
         {picToDisplay === "HG5" && youWon==false && <img src={HG5} alt="Hangman" className="w-full h-5/6 flex justify-start items-center" />}
           {picToDisplay === "HG6" && youWon == false && <img src={HG6} alt="Hangman" className="w-full h-5/6 flex justify-start items-center" />}
+          {picToDisplay === "HG7" && youWon==false && <img src={HG6} alt="Hangman" className="w-full h-5/6 flex justify-start items-center" />}
           {youWon==true && <img src={HGVictory} alt="Hangman" className="w-full h-5/6 flex justify-start items-center" />}
         </div>
           <div className="w-1/2 h-[85vh] flex flex-col justify-evenly item">
