@@ -64,9 +64,9 @@ export function WordToGuess({ guessedLetter, youWon, setYouWon, gameOver, setGam
 
     //if the word does not contain the latest guessed letter, this fn subtracts '1' from the # of attempts left
     console.log(displayWordToGuess);
-    if (flag == false && attemptsLeft >= 0) {
+    if (flag == false && attemptsLeft > 1) {
       setAttemptsLeft(attemptsLeft - 1);
-      if (attemptsLeft == 0) {
+      if (attemptsLeft == 1) {
         setGameOver(true);
       }
       console.log(attemptsLeft);
@@ -78,7 +78,7 @@ export function WordToGuess({ guessedLetter, youWon, setYouWon, gameOver, setGam
   useEffect(() => {
     console.log(`the display word to guess is ${displayWordToGuess.join('')}`)
     console.log(`the word to guess is ${wordToGuess}`)
-    if (displayWordToGuess.join('')== wordToGuess && attemptsLeft > 0 && displayWordToGuess!='') {
+    if (displayWordToGuess.join('')== wordToGuess && attemptsLeft > 1 && displayWordToGuess!='') {
       setYouWon(true);
       console.log('youWon');
       console.log(Array(displayWordToGuess).includes('?'))
