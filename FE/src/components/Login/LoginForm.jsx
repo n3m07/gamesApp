@@ -12,8 +12,12 @@ export function LoginForm({
   currentUser,
   setCurrentUser,
 }) {
-  const userAuth = loginBtnHandler.userAuth;
-  console.log(userAuth);
+
+
+  /* const userAuth = loginBtnHandler.userAuth;
+  console.log(userAuth); */
+
+  
   return (
     <>
       {submitFormat == "login" && isLoggedIn == false && (

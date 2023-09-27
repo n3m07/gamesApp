@@ -15,13 +15,16 @@ function App() {
   let [isLoggedIn, setIsLoggedIn] = useState(false);
   let [currentUser, setCurrentUser] = useState("");
 
-  useEffect(() => {
+
+  //...section admin to be implemented
+  
+  /* useEffect(() => {
     if (currentUser.isAdmin == true) {
       console.log("carciofi");
     } else {
       console.log("patate");
     }
-  }, [currentUser]);
+  }, [currentUser]); */
 
   return (
     <>

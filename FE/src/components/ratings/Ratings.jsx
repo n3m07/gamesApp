@@ -6,7 +6,7 @@ import deleteScoreBtnHanlder from "./deleteScoreBtnHanlder";
 
 function Ratings({ currentUser, setCurrentUser, isLoggedIn }) {
   const navigate = useNavigate();
-  const [avg, setAvg]=useState('')
+  const [avg, setAvg] = useState('')
 
   useEffect(() => {
     // Controlla se l'utente non è loggato e quindi naviga alla pagina di login
