@@ -17,7 +17,7 @@ function SubscribeForm({submitFormat, setSubmitFormat, nickName, setNickName, pw
                         placeholder="Choose a nickName"
                         value={nickName}
                         onChange={(e) => {
-                          setNickName(e.target.value);
+                          setNickName(e.target.value.toLocaleLowerCase().trim());
                         }}
                       />
                     </label>
@@ -27,7 +27,7 @@ function SubscribeForm({submitFormat, setSubmitFormat, nickName, setNickName, pw
                       className="border border-black rounded px-1"
                       placeholder="Choose a Password"
                       onChange={(e) => {
-                        setPw(e.target.value);
+                        setPw(e.target.value.toLowerCase().trim());
                       }}
                     />
                     <button

@@ -2,7 +2,8 @@ import { useState, useEffect } from "react";
 import SubscribeForm from "./SubscribeForm";
 import { LoginForm } from "./LoginForm";
 
-function Login({cookies, setCookie, isLoggedIn, setIsLoggedIn, currentUser, setCurrentUser}) {
+function Login({ cookies, setCookie, isLoggedIn, setIsLoggedIn, currentUser, setCurrentUser }) {
+  
   //this state variable rendes the component accoding to the Login/subscribe btns on the bottom of the page
   let [submitFormat, setSubmitFormat] = useState("login");
   let [nickName, setNickName] = useState("");
