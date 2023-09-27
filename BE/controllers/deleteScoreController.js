@@ -2,13 +2,15 @@ const mongoose = require("mongoose");
 const User = require("../models/UsersModel");
 
 exports.deleteScore = async (req, res) => {
+  const { userName, scoreId, index } = req.body;
+  console.log(req.body)
+  console.log(userName)
+
   try {
-    const { userName, scoreId, index } = req.body;
-    console.log(userName)
 
     const user = await User.findOne({ userName });
-    console.log(user)
-    const scoreToDelete = user.scoresHG[index]
+    console.log(`the user is ${user}`)
+    const scoreToDelete = await user.scoresHG[index]
     
     if (!scoreToDelete) { return res.status(401).json({ error: "Score not found" }); }
 
