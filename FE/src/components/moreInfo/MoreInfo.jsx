@@ -13,7 +13,7 @@ function MoreInfo() {
           {theDuckDied==true && <div className="text-3xl font-bold italic flex flex-col justify-start items-center">
               What have you done??? :(
           </div>}
-      <button className="w-1/3 h-3/6" onClick={()=>{setTheDuckDied(true)}}>
+      <button className="w-1/3 h-5/6" onClick={()=>{setTheDuckDied(true)}}>
               {theDuckDied == false && <Duck />}
               {theDuckDied== true && <DeadDuck/>}
       </button>

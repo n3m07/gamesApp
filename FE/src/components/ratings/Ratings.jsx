@@ -23,7 +23,7 @@ function Ratings({ currentUser, setCurrentUser, isLoggedIn }) {
         sum += el.score;
       });
       console.log(sum)
-      let avg = sum / currentUser.scoresHG.length;
+      let avg = Math.round(sum/currentUser.scoresHG.length);
       console.log(avg)
       setAvg(avg)
     }
